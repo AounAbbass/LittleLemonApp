@@ -24,13 +24,14 @@ const menuItemsToDisplay = [
     { name: 'Panna Cotta', price: '$5.00', id: '21V' },
   ];
 
+  const Header = () => <Text style={menuStyles.headerText}>View Menu</Text>;
+
   const Item = ({ name, price }) => (
     <View style={menuStyles.innerContainer}>
       <Text style={menuStyles.itemText}>{name}</Text>
       <Text style={menuStyles.itemText}>{price}</Text>
     </View>
   );
-  
   
   const MenuItems = () => {
     const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
@@ -40,7 +41,10 @@ const menuItemsToDisplay = [
         <FlatList
           data={menuItemsToDisplay}
           keyExtractor={(item) => item.id}
-          renderItem={renderItem}></FlatList>
+          renderItem={renderItem}
+          ListHeaderComponent={Header}
+          >
+          </FlatList>
       </View>
     );
   };
@@ -54,6 +58,12 @@ const menuItemsToDisplay = [
       paddingVertical: 20,
       flexDirection: 'row',
       justifyContent: 'space-between'
+    },
+    headerText: {
+      fontSize: 40,
+      color: 'white',
+      justifyContent: 'center',
+      paddingLeft: 120,
     },
     itemText: {
       color: '#F4CE14',
