@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 
  // Import a local component here
  import LittleLemonHeader from './components/LittleLemonHeader';
+ import LittleLemonFooter from './components/LittleLemonFooter';
  import WelcomeScreen from './WelcomeScreen';
  export default function App() {
  return (
@@ -10,6 +11,9 @@ import { View, StyleSheet } from 'react-native';
  style={styles.container}>
  <LittleLemonHeader />
  <WelcomeScreen />
+ <View style={styles.footerContainer}>
+  <LittleLemonFooter />
+  </View>
  </View>
  );
  }
